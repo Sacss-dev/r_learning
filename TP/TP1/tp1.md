@@ -92,7 +92,12 @@ y <- iris$Petal.Length # Longueur des pétales
 plot(x,y)
 ```
 
-Ce qui nous donne le premier graphique : **Insérer graphique**
+Ce qui nous donne le premier graphique : 
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q3.png" alt="Graphique Q3" width="600"/> </div>
+<br />  
+
 
 ---
 
@@ -104,6 +109,12 @@ Changez le style avec `pch=16` et choisissez une couleur moderne depuis la palet
 ```r
 plot(x,y,pch=16,col="#3498db")
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q4.png" alt="Graphique Q4" width="600"/> </div>
+<br />  
+
+
 ---
 
 ### 5. Étiquettes
@@ -119,6 +130,12 @@ plot(x,y,pch=16,col="#3498db",
      xlab="Largeur des pétales", 
      ylab="Longueur des pétales")
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q5.png" alt="Graphique Q5" width="600"/> </div>
+<br />  
+
+
 ---
 
 ### 6. Régression linéaire
@@ -162,6 +179,12 @@ Ajoutez la droite de régression avec `abline` avec une épaisseur de 2 et une c
 ```r
 abline(reg, col = "#333333", lwd = 2)  # "#333333" = gris très foncé
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q8.png" alt="Graphique Q8" width="600"/> </div>
+<br />  
+
+
 ---
 
 ### 9. Légende
@@ -172,6 +195,12 @@ Ajoutez une légende en haut à gauche avec `legend`.
 ```r
 legend("topleft", legend="Jeu de données", pch=1, lwd=2)
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q9.png" alt="Graphique Q9" width="600"/> </div>
+<br />  
+
+
 ---
 
 ### 10. Couleurs par espèce
@@ -225,6 +254,14 @@ legend("topleft",
        bg="#C6F5ED"
 )
 ```
+
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q12.png" alt="Graphique Q12" width="600"/> </div>
+<br />  
+
+
+
 ---
 
 ### 13. Maillage et fond
@@ -234,6 +271,12 @@ Ajoutez `grid()` et mettez une couleur de fond à la légende.
 ```r
 grid()
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP1/q13.png" alt="Graphique Q13" width="600"/> </div>
+<br />  
+
+
 ---
 
 ### 14. Export PDF
