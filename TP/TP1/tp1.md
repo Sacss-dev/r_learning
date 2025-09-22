@@ -147,7 +147,12 @@ is.list(reg) # Check s'il s'agit d'une liste.
 
 print(names(reg)) # Affiche le nom des éléments
 ```
+Ce qui donne l'affichage suivant dans le terminal : 
 
+```txt
+ [1] "coefficients"  "residuals"     "effects"       "rank"          "fitted.values" "assign"        "qr"           
+ [8] "df.residual"   "xlevels"       "call"          "terms"         "model"    
+```
 ---
 
 ### 8. Droite de régression
