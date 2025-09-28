@@ -133,6 +133,11 @@ legend("topleft", legend = colnames(data)[-1], lty=1, lwd=2,
 <br />  
 <div align="center"> <img src="/TP/TP2/graphique_inflation.png" alt="Graphique Inflation" width="600"/> </div>
 <br />  
+
+
+
+
+
 ---
 
 ### 11. Mise en base 100
