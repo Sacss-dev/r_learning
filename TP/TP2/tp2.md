@@ -1,5 +1,4 @@
-# Statistique descriptive avec R  
-## TP 2
+# Statistique descriptive avec R - TP 2
 
 Téléchargez les données au format Excel disponibles à l’adresse suivante :  
 <https://www.insee.fr/fr/statistiques/4268033>.  
