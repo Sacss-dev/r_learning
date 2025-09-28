@@ -2,6 +2,6 @@
 
 ## Liste des TPs réalisés
 
-- TP1 :
-- TP2 :
+- TP1 : [Corrigé](/TP/TP1/tp1.md)
+- TP2 : [Corrigé](/TP/TP2/tp2.md)
 - TP3
