@@ -87,6 +87,10 @@ hist(Perf, breaks=batons, main="Histogramme des Perf du S&P500", col="skyblue")
 <br />  
 <div align="center"> <img src="/TP/TP3/histogramme_q5.png" alt="Histogramme Q5" width="600"/> </div>
 <br /> 
+
+
+
+
 ---
 
 ### 6. Moyenne et écart-type
