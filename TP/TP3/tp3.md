@@ -16,6 +16,9 @@ Spécifiez le type des données à l’importation.
 data <- fread("chart.csv", encoding="UTF-8", colClasses = c("character","numeric"))
 data$Date <- as.Date(paste0("01/", data$Date), format = "%d/%m/%Y")
 ```
+
+
+
 ---
 
 ### 2. Performance
@@ -31,6 +34,9 @@ Mettez `NA` pour le premier mois.
 data[, Perf:= c(NA, (`S&P500`[-1] - `S&P500`[-nrow(data)])/ `S&P500`[-nrow(data)])]
 ```
 
+
+
+
 ---
 
 ### 3. Histogramme
@@ -45,6 +51,9 @@ hist(data$Perf, main="Histogramme du S&P500")
 <br />  
 <div align="center"> <img src="/TP/TP3/histogramme_q3.png" alt="Histogramme Q3" width="600"/> </div>
 <br /> 
+
+
+
 ---
 
 ### 4. Vecteurs utiles
@@ -62,6 +71,9 @@ max_perf <- round(max(Perf),2)
 
 batons <- seq(min_perf,max_perf, by=0.01)
 ```
+
+
+
 ---
 
 ### 5. Histogramme détaillé
@@ -85,6 +97,9 @@ Calculez la moyenne et l’écart-type des performances.
 mean_perf <- mean(Perf)
 sd_perf <- sd(Perf)
 ```
+
+
+
 ---
 
 ### 7. Densité gaussienne
@@ -100,6 +115,8 @@ lines(batons, dnorm(batons, mean = mean_perf, sd = sd_perf), col="red", lwd=2)
 <br />  
 <div align="center"> <img src="/TP/TP3/graphique_q7.png" alt="Histogramme Q5" width="600"/> </div>
 <br /> 
+
+
 
 ---
 
@@ -122,6 +139,10 @@ lines(dens_perf, col="darkblue", lwd=2)
 <br />  
 <div align="center"> <img src="/TP/TP3/graphique_q8.png" alt="Histogramme Q5" width="600"/> </div>
 <br /> 
+
+
+
+
 ---
 
 ### 9. Skewness et Kurtosis
@@ -145,6 +166,7 @@ skewness # skewness < 0 : asymétrie à gauche
 kurtosis # > 3: queue plus épaisse qu'une gaussienne
 ```
 
+
 ---
 
 ### 10. Test de Jarque-Bera
@@ -159,6 +181,7 @@ où $S_n$ est le skewness et $K_n$ le kurtosis.
 n <- length(Perf)
 stat_JB <- n*(skewness**2 / 6 + (kurtosis - 3)**2 / 24)
 ```
+
 
 ---
 
@@ -176,6 +199,10 @@ curve(dchisq(x, df = 2), from = 0, to = 10, col = "red", lwd = 2)
 pval <- 1 - pchisq(stat_JB, df = 2)
 pval # Très forte preuve pour rejeter H0
 ```
+
+
+
+
 ---
 
 ### 12. Fonction R
@@ -202,4 +229,6 @@ testJB <- function(x) {
   return(pval)
 }
 ```
+
+
 ---
