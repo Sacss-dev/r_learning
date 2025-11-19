@@ -11,10 +11,10 @@ Nous allons travailler sur les données `airquality` intégrées à R.
 **📝 Corrigé**
 
 ``` r
-data <- airquality
-str(data)
-summary(data)
-head(data)
+colnames(airquality)
+summary(airquality)
+View(airquality)
+pairs(airquality) # Pratique pour les petits jeux de données
 ```
 
 ------------------------------------------------------------------------
@@ -28,14 +28,7 @@ Puis supprimez les colonnes Day et Month.
 **📝 Corrigé**
 
 ``` r
-data$Date <- as.Date(
-  paste(data$Year <- 1973, data$Month, data$Day, sep = "-"),
-  format = "%Y-%m-%d"
-)
-
-data$Year <- NULL
-data$Month <- NULL
-data$Day <- NULL
+airquality$Date <- as.Date(paste("1973", airquality$Month, airquality$Day , sep = "-"))
 ```
 
 ------------------------------------------------------------------------
@@ -48,13 +41,22 @@ avec `pch = 16` et des couleurs différentes.
 **📝 Corrigé**
 
 ``` r
-par(mfrow=c(2,2), mar=c(4.1,4,2,2))
+par(mfrow = c(2, 2), mar = c(4.1, 4, 2, 2))
 
-plot(data$Date, data$Ozone,  pch=16, col="steelblue",   main="Ozone")
-plot(data$Date, data$Solar.R,pch=16, col="darkorange",  main="Solar.R")
-plot(data$Date, data$Wind,   pch=16, col="seagreen",    main="Wind")
-plot(data$Date, data$Temp,   pch=16, col="purple",      main="Temp")
+plot(airquality$Date, airquality$Ozone, pch = 16, col = "darkred")
+plot(airquality$Date, airquality$Solar.R, pch = 16, col = "skyblue")
+plot(airquality$Date, airquality$Wind, pch = 16, col = "forestgreen")
+plot(airquality$Date, airquality$Temp, pch = 16, col = "darkblue")
 ```
+
+Ce qui nous donne le graphique suivant : 
+
+
+<br />  
+<div align="center"> <img src="/TP/TP4/graphique_q3" alt="Graphique Q3" width="600"/> </div>
+<br /> 
+
+
 
 ------------------------------------------------------------------------
 
@@ -64,6 +66,12 @@ plot(data$Date, data$Temp,   pch=16, col="purple",      main="Temp")
 
 ``` r
 colMeans(is.na(data))
+
+# Alternative plus classique 
+pourcentages <- apply(airquality, MARGIN=2, FUN= function(x) 100 * mean(is.na(x)))
+
+# solution encore plus opti
+airquality %>% summarise_all(function(x) 100*mean(is.na(x)))
 ```
 
 ------------------------------------------------------------------------
@@ -73,13 +81,20 @@ colMeans(is.na(data))
 **📝 Corrigé**
 
 ``` r
-par(mfrow=c(2,2))
+par(mfrow = c(2, 2), mar = c(4.1, 4, 2, 2))
 
-plot(data$Wind,  data$Ozone,   pch=16, col="steelblue",  main="Ozone ~ Wind")
-plot(data$Temp,  data$Ozone,   pch=16, col="steelblue",  main="Ozone ~ Temp")
-plot(data$Wind,  data$Solar.R, pch=16, col="darkorange", main="Solar.R ~ Wind")
-plot(data$Temp,  data$Solar.R, pch=16, col="darkorange", main="Solar.R ~ Temp")
+
+plot(airquality$Wind, airquality$Ozone, pch = 16)
+plot(airquality$Temp, airquality$Ozone, pch = 16)
+plot(airquality$Solar.R, airquality$Ozone, pch = 16)
+plot(airquality$Wind, airquality$Solar.R, pch = 16)
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP4/graphique_q5" alt="Graphique Q5" width="600"/> </div>
+<br /> 
+
+
 
 ------------------------------------------------------------------------
 
@@ -92,18 +107,21 @@ Supprimez les variables non significatives (5%).
 **📝 Corrigé**
 
 ``` r
-mod_oz <- lm(Ozone ~ Solar.R + Wind + Temp, data=data)
-summary(mod_oz)
+lm_ozone <- lm(Ozone ~ Wind + Temp + Solar.R, data = airquality)
+summary(lm_ozone)
+plot(lm_ozone)
 
-mod_oz2 <- lm(Ozone ~ Wind + Temp, data=data)
-summary(mod_oz2)
-
-mod_solar <- lm(Solar.R ~ Ozone + Wind + Temp, data=data)
-summary(mod_solar)
-
-mod_solar2 <- lm(Solar.R ~ Ozone + Temp, data=data)
-summary(mod_solar2)
+lm_solar <- lm(Solar.R ~ Ozone, data = airquality)
+summary(lm_solar)
 ```
+
+
+
+<br />  
+<div align="center"> <img src="/TP/TP4/graphique_q6" alt="Graphique Q6" width="600"/> </div>
+<br /> 
+
+
 
 ------------------------------------------------------------------------
 
@@ -112,9 +130,17 @@ summary(mod_solar2)
 **📝 Corrigé**
 
 ``` r
-plot(data$Solar.R, data$Ozone, pch=16, col="darkred",
-     xlab="Solar.R", ylab="Ozone", main="Ozone en fonction de Solar.R")
+plot(airquality$Solar.R, airquality$Ozone, pch = 16)
+
+# Avec ggplot2:
+library(ggplot2)
+ggplot(airquality, aes(x = Solar.R, y = Ozone)) + geom_point()
 ```
+
+
+<br />  
+<div align="center"> <img src="/TP/TP4/graphique_q7" alt="Graphique Q7" width="600"/> </div>
+<br /> 
 
 ------------------------------------------------------------------------
 
@@ -133,15 +159,10 @@ sum(is.na(data$Ozone) & is.na(data$Solar.R))
 **📝 Corrigé**
 
 ``` r
-aq <- data
-
-mod_oz_final <- mod_oz2
-
-ind <- is.na(aq$Ozone) & !is.na(aq$Solar.R)
-
-pred_oz <- predict(mod_oz_final, newdata=aq[ind, ])
-
-aq$Ozone[ind] <- pred_oz
+aq <- airquality
+indices <- is.na(airquality$Ozone) & !is.na(airquality$Solar.R)
+aq$Ozone[indices] <- predict(lm_ozone, newdata = airquality[indices, ])
+aq$Ozone_isna <- indices
 ```
 
 ------------------------------------------------------------------------
@@ -151,13 +172,9 @@ aq$Ozone[ind] <- pred_oz
 **📝 Corrigé**
 
 ``` r
-mod_solar_final <- mod_solar2
-
-ind <- is.na(aq$Solar.R) & !is.na(aq$Ozone)
-
-pred_solar <- predict(mod_solar_final, newdata=aq[ind, ])
-
-aq$Solar.R[ind] <- pred_solar
+indices <- is.na(airquality$Solar.R) & !is.na(airquality$Ozone)
+aq$Solar.R[indices] <- predict(lm_solar, newdata = airquality[indices, ])
+aq$Solar.R_isna <- indices
 ```
 
 ------------------------------------------------------------------------
@@ -170,15 +187,7 @@ sombre.
 **📝 Corrigé**
 
 ``` r
-par(mfrow=c(2,1))
-
-plot(aq$Date, aq$Ozone, pch=16, col="steelblue", main="Ozone complété")
-points(aq$Date[is.na(data$Ozone)], 
-       aq$Ozone[is.na(data$Ozone)],
-       pch=17, col="black")
-
-plot(aq$Date, aq$Solar.R, pch=16, col="darkorange", main="Solar.R complété")
-points(aq$Date[is.na(data$Solar.R)],
-       aq$Solar.R[is.na(data$Solar.R)],
-       pch=17, col="black")
+par(mfrow=c(2 ,1))
+plot(aq$Date , aq$Ozone , xlab="",ylab="Ozone", pch =16+aq$Ozone_isna , col=c("#c0392b", "#2c3e50")[1+ aq$Ozone_isna])
+plot(aq$Date , aq$Solar.R , xlab="", ylab="Solar.R", pch =16+aq$Solar.R_isna , col=c("#27ae60", "#2c3e50")[1+ aq$Solar.R_isna ])
 ```
