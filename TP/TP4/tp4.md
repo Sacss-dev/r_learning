@@ -53,7 +53,7 @@ Ce qui nous donne le graphique suivant :
 
 
 <br />  
-<div align="center"> <img src="/TP/TP4/graphique_q3" alt="Graphique Q3" width="600"/> </div>
+<div align="center"> <img src="/TP/TP4/graphique_q3.png" alt="Graphique Q3" width="600"/> </div>
 <br /> 
 
 
@@ -91,7 +91,7 @@ plot(airquality$Wind, airquality$Solar.R, pch = 16)
 ```
 
 <br />  
-<div align="center"> <img src="/TP/TP4/graphique_q5" alt="Graphique Q5" width="600"/> </div>
+<div align="center"> <img src="/TP/TP4/graphique_q5.png" alt="Graphique Q5" width="600"/> </div>
 <br /> 
 
 
@@ -118,7 +118,7 @@ summary(lm_solar)
 
 
 <br />  
-<div align="center"> <img src="/TP/TP4/graphique_q6" alt="Graphique Q6" width="600"/> </div>
+<div align="center"> <img src="/TP/TP4/graphique_q6.png" alt="Graphique Q6" width="600"/> </div>
 <br /> 
 
 
@@ -139,8 +139,10 @@ ggplot(airquality, aes(x = Solar.R, y = Ozone)) + geom_point()
 
 
 <br />  
-<div align="center"> <img src="/TP/TP4/graphique_q7" alt="Graphique Q7" width="600"/> </div>
+<div align="center"> <img src="/TP/TP4/graphique_q7.png" alt="Graphique Q7" width="600"/> </div>
 <br /> 
+
+
 
 ------------------------------------------------------------------------
 
@@ -191,3 +193,8 @@ par(mfrow=c(2 ,1))
 plot(aq$Date , aq$Ozone , xlab="",ylab="Ozone", pch =16+aq$Ozone_isna , col=c("#c0392b", "#2c3e50")[1+ aq$Ozone_isna])
 plot(aq$Date , aq$Solar.R , xlab="", ylab="Solar.R", pch =16+aq$Solar.R_isna , col=c("#27ae60", "#2c3e50")[1+ aq$Solar.R_isna ])
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP4/graphique_q11.png" alt="Graphique Q11" width="600"/> </div>
+<br /> 
+
