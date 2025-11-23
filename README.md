@@ -8,7 +8,7 @@ Deposit Github regroupant les ressources disponibles à l'ENSAE pour apprendre l
 - TP2 : [Corrigé](/TP/TP2/tp2.md)
 - TP3 : [Corrigé](/TP/TP3/tp3.md)
 - TP4 : [Corrigé](/TP/TP4/tp4.md)
-- TP5 : [Corrigé](/TP/TP5/tp5.md)
+- TP5 : [Énoncé](/TP/TP5/tp5_enonce.pdf) | [Corrigé](/TP/TP5/tp5.md) | [Corrigé (fichier source)](/TP/TP5/tp5_corrige.R)
 - TP6 :
 - TP7 :
 
