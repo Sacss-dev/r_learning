@@ -1,6 +1,8 @@
 # Apprentissage du langage R 
 
-Deposit Github regroupant les ressources disponibles à l'ENSAE pour apprendre le langage R.
+Deposit Github regroupant quelques ressources disponibles à l'ENSAE pour apprendre le langage R.
+
+Réalisé par Olivier CAFFIER - 1A Maths
 
 ## Liste des TPs réalisés (corrigés)
 
@@ -9,8 +11,11 @@ Deposit Github regroupant les ressources disponibles à l'ENSAE pour apprendre l
 - TP3 : [Énoncé](/TP/TP3/tp3_enonce.pdf) | [Corrigé](/TP/TP3/tp3.md) | [Corrigé (fichier source)](/TP/TP3/tp3_corrige.R)
 - TP4 : [Énoncé](/TP/TP4/tp4_enonce.pdf) | [Corrigé](/TP/TP4/tp4.md) | [Corrigé (fichier source)](/TP/TP4/tp4_corrige.R)
 - TP5 : [Énoncé](/TP/TP5/tp5_enonce.pdf) | [Corrigé](/TP/TP5/tp5.md) | [Corrigé (fichier source)](/TP/TP5/tp5_corrige.R)
-- TP6 :
+- TP6 : 
 - TP7 :
+- TP8 : 
+
 
 ## Fiches de révision
 
+Let me cook
