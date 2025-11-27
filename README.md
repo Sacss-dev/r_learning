@@ -18,4 +18,4 @@ Réalisé par Olivier CAFFIER - 1A Maths
 
 ## Fiches de révision
 
-- [Mémo des fonctions](/cours/revisions.md)
+- [Mémo des fonctions](/cours/revisions.md) | [(Version pdf pour imprimer)](/cours/revisions.pdf)
