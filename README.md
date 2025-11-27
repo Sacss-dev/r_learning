@@ -18,4 +18,4 @@ Réalisé par Olivier CAFFIER - 1A Maths
 
 ## Fiches de révision
 
-Let me cook
+- [Mémo des fonctions](/cours/revisions.md)
