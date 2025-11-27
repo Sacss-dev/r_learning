@@ -47,18 +47,21 @@
 ## Les fonctions
   <a name="barplot"></a>
   - `barplot(x, names.arg, col, main, xlab, ylab)` crée un diagramme en barres
-        &rarr; Exemple : `barplot(table(iris$Species), col="steelblue", main="Répartition des espèces")`
+    
+    &rarr; Exemple : `barplot(table(iris$Species), col="steelblue", main="Répartition des espèces")`
 
   --- 
 
   <a name="colmeans"></a>
   - `colMeans(x)` calcule la moyenne de chaque colonne d'une matrice ou data.frame
-        &rarr; Exemple : `colMeans(iris[,1:4])` calcule les moyennes des colonnes numériques
+    
+    &rarr; Exemple : `colMeans(iris[,1:4])` calcule les moyennes des colonnes numériques
 
   ---
   <a name="colnames"></a>
   - `colnames(x)` retourne les noms des colonnes d'une matrice ou data.frame
-        &rarr; Exemple : `colnames(iris)` affiche les noms des colonnes
+
+    &rarr; Exemple : `colnames(iris)` affiche les noms des colonnes
 
   ---
   <a name="cor"></a>
@@ -84,7 +87,8 @@
         - `kernel` définit le type de noyau à utiliser (par exemple, "gaussian", "epanechnikov", etc.)
         - `trim` indique si l'on doit tronquer les valeurs en dehors de l'intervalle
         - `from` et `to` définissent l'intervalle sur lequel la densité est estimée
-        &rarr; Exemple :
+        
+      &rarr; Exemple :
 
       ```r
       dens_perf <- density(Perf)
@@ -109,7 +113,7 @@
   <a name="fileexists"></a>
   - `file.exists(filename)` vérifie si un fichier existe
 
-        &rarr; Exemple : `file.exists("data.csv")` retourne TRUE ou FALSE
+    &rarr; Exemple : `file.exists("data.csv")` retourne TRUE ou FALSE
 
   ---
   <a name="grid"></a>
@@ -143,7 +147,8 @@
       - `col` : couleur
       - `lwd` : épaisseur du trait
       - `lty` : style du trait
-      &rarr; Exemple：
+      
+    &rarr; Exemple：
       ```r
       plot(x, y, type = "n")         # crée la fenêtre sans tracer les points
       lines(x, y, col = "red", lwd = 2)
@@ -355,6 +360,7 @@
   --- 
   <a name="round"></a>
   - `round(number,number_digits)` fournit une approximation de `number` avec `number_digits` chiffres après la virgule
+    
     &rarr; Exemple : `round(2.555555,2)` renvoie `2.56`
 
   --- 
