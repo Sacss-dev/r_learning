@@ -105,6 +105,10 @@ plot(log10(freq_poisson), log10(freq_empirique), type = "b")
 abline(a = 0, b = 1, col = "red")
 ```
 
+<br />  
+<div align="center"> <img src="/TP/TP6/graphique_q5.png" alt="Graphique Q5" width="600"/> </div>
+<br />  
+
 ---
 
 ### 6. Représentation graphique des deux fréquences  
@@ -120,6 +124,10 @@ lines(c(0:4),freq_empirique, type="b", pch =16, col="blue", lwd = 2)
 
 legend(x = "topright", legend = c("Freq Poisson", "Freq Empi"), col = c("black", "blue"), lty = 1, pch = 16)
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP6/graphique_q6.png" alt="Graphique Q6" width="600"/> </div>
+<br />  
 
 ---
 
@@ -189,6 +197,12 @@ hist(freMTPLsev[(ClaimAmount > 900) & (ClaimAmount < 1500), ClaimAmount],
 # Sinistres avec franchise standardisée ? E.g. bris de glace
 
 ```
+
+<br />  
+<div align="center"> <img src="/TP/TP6/graphique_q8.png" alt="Graphique Q8" width="600"/> </div>
+<br />  
+
+
 
 ---
 
