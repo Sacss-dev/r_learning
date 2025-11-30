@@ -13,7 +13,7 @@ Réalisé par Olivier CAFFIER - 1A Maths
 - TP5 : [Énoncé](/TP/TP5/tp5_enonce.pdf) | [Corrigé](/TP/TP5/tp5.md) | [Corrigé (fichier source)](/TP/TP5/tp5_corrige.R)
 - TP6 : [Énoncé](/TP/TP6/tp6_enonce.pdf) | [Corrigé](/TP/TP6/tp6.md) | [Corrigé (fichier source)](/TP/TP6/tp6_corrige.R)
 - TP7 : [Énoncé](/TP/TP7/tp7_enonce.pdf) | [Corrigé](/TP/TP7/tp7.md) | [Corrigé (fichier source)](/TP/TP7/tp7_corrige.R)
-- TP8 : 
+- TP8 : [Énoncé](/TP/TP8/tp8_enonce.pdf) | [Corrigé](/TP/TP8/tp8.md) | [Corrigé (fichier source)](/TP/TP8/tp8_corrige.R)
 
 
 ## Fiches de révision
